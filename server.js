@@ -21,14 +21,19 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json({ limit: "10mb" }));
-app.use(express.static(uploadsDir));
+
+// untuk mengakses file gambar
+app.use("/uploads", express.static(uploadsDir)); // agar gambar bisa diakses via URL
 
 // Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ 
+  res.status(500).json({
     error: "Terjadi kesalahan pada server",
-    message: process.env.NODE_ENV === "development" ? err.message : "Terjadi kesalahan pada server"
+    message:
+      process.env.NODE_ENV === "development"
+        ? err.message
+        : "Terjadi kesalahan pada server",
   });
 });
 

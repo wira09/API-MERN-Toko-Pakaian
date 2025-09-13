@@ -53,10 +53,12 @@ Backend untuk aplikasi toko pakaian menggunakan Node.js, Express, dan Prisma ORM
 ## API Endpoints
 
 ### Autentikasi
+
 - `POST /api/auth/register` - Registrasi pengguna baru
 - `POST /api/auth/login` - Login pengguna
 
 ### Kategori
+
 - `GET /api/categories` - Mendapatkan semua kategori
 - `POST /api/categories` - Membuat kategori baru (Admin only)
 - `GET /api/categories/:id` - Mendapatkan kategori berdasarkan ID
@@ -64,12 +66,15 @@ Backend untuk aplikasi toko pakaian menggunakan Node.js, Express, dan Prisma ORM
 - `DELETE /api/categories/:id` - Menghapus kategori (Admin only)
 
 ### Produk
+
 - `GET /api/products` - Mendapatkan semua produk
 - `POST /api/products` - Membuat produk baru (Admin only)
+- `GET /api/products/:id` - Mendapatkan produk berdasarkan ID
 - `PUT /api/products/:id` - Mengupdate produk (Admin only)
 - `DELETE /api/products/:id` - Menghapus produk (Admin only)
 
 ### Pesanan
+
 - `POST /api/orders` - Membuat pesanan baru
 - `GET /api/orders` - Mendapatkan pesanan pengguna
 
@@ -89,6 +94,7 @@ Backend untuk aplikasi toko pakaian menggunakan Node.js, Express, dan Prisma ORM
 ### Penjelasan Model
 
 #### Category
+
 - `id` (Int): ID unik untuk kategori
 - `name` (String): Nama kategori (unik)
 - `products` (Relation): Daftar produk yang terkait dengan kategori ini
@@ -98,6 +104,7 @@ Backend untuk aplikasi toko pakaian menggunakan Node.js, Express, dan Prisma ORM
 Gambar produk disimpan di direktori `uploads/` dan diakses secara statis melalui endpoint `/uploads/filename`.
 
 ### Validasi File Upload
+
 - Hanya file gambar yang diizinkan (jpeg, png, gif, dll)
 - Ukuran maksimal file: 5MB
 - Nama file diacak untuk mencegah konflik
@@ -105,6 +112,7 @@ Gambar produk disimpan di direktori `uploads/` dan diakses secara statis melalui
 ## Penanganan Error
 
 Backend dilengkapi dengan penanganan error yang komprehensif:
+
 - Validasi input di setiap endpoint
 - Penanganan error database
 - Penanganan error autentikasi
