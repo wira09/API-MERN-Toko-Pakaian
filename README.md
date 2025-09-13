@@ -56,6 +56,13 @@ Backend untuk aplikasi toko pakaian menggunakan Node.js, Express, dan Prisma ORM
 - `POST /api/auth/register` - Registrasi pengguna baru
 - `POST /api/auth/login` - Login pengguna
 
+### Kategori
+- `GET /api/categories` - Mendapatkan semua kategori
+- `POST /api/categories` - Membuat kategori baru (Admin only)
+- `GET /api/categories/:id` - Mendapatkan kategori berdasarkan ID
+- `PUT /api/categories/:id` - Mengupdate kategori (Admin only)
+- `DELETE /api/categories/:id` - Menghapus kategori (Admin only)
+
 ### Produk
 - `GET /api/products` - Mendapatkan semua produk
 - `POST /api/products` - Membuat produk baru (Admin only)
@@ -78,6 +85,13 @@ Backend untuk aplikasi toko pakaian menggunakan Node.js, Express, dan Prisma ORM
 - Product (id, name, description, price, image, categoryId)
 - Order (id, userId, total, status)
 - OrderItem (id, orderId, productId, quantity, price)
+
+### Penjelasan Model
+
+#### Category
+- `id` (Int): ID unik untuk kategori
+- `name` (String): Nama kategori (unik)
+- `products` (Relation): Daftar produk yang terkait dengan kategori ini
 
 ## File Upload
 

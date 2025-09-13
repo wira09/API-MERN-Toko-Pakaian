@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const authRoutes = require("./routes/auth");
 const productRoutes = require("./routes/product");
 const orderRoutes = require("./routes/order");
+const categoryRoutes = require("./routes/category");
 const path = require("path");
 const fs = require("fs");
 
@@ -33,6 +34,8 @@ app.use((err, req, res, next) => {
 
 // api auth routes
 app.use("/api/auth", authRoutes);
+// api category routes
+app.use("/api/categories", categoryRoutes);
 // api product routes
 app.use("/api/products", productRoutes);
 // api order routes
