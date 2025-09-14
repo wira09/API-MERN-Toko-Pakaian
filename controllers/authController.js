@@ -47,7 +47,17 @@ exports.register = async (req, res) => {
         role: role || "USER",
       },
     });
-    res.status(201).json({ message: "User berhasil didaftarkan", user });
+
+    // Hapus password dari response
+    const userData = {
+      ...user,
+      password: undefined, // Sembunyikan password
+      role: undefined, // Sembunyikan role
+    };
+
+    res
+      .status(201)
+      .json({ message: "User berhasil didaftarkan", user: userData });
   } catch (error) {
     res.status(500).json({
       error: "Terjadi kesalahan saat registrasi",
