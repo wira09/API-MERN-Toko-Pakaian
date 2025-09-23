@@ -1,10 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const authRoutes = require("./routes/auth");
-const productRoutes = require("./routes/product");
-const orderRoutes = require("./routes/order");
-const categoryRoutes = require("./routes/category");
+// disatuin aja biar gak error
+const {
+  authRoutes,
+  productRoutes,
+  orderRoutes,
+  categoryRoutes,
+} = require("./routes/auth");
 const path = require("path");
 const fs = require("fs");
 
