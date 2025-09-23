@@ -1,4 +1,5 @@
 const express = require("express");
+const multer = require("multer");
 const { auth, adminOnly } = require("../middleware/auth");
 const {
   createProduct,

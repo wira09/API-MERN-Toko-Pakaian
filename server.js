@@ -1,13 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-// disatuin aja biar gak error
+// disatuin aja biar gak ribet
 const {
   authRoutes,
   productRoutes,
   orderRoutes,
   categoryRoutes,
-} = require("./routes/auth");
+} = require("./routes");
 const path = require("path");
 const fs = require("fs");
 
